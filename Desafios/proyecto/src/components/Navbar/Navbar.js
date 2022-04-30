@@ -1,40 +1,35 @@
-import { Navbar, Container, Nav   } from 'react-bootstrap';
-export default function Header () {
-    return (
-        <>
-  <Navbar bg="dark" variant="dark">
-    <Container>
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="me-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    </Container>
-  </Navbar>
-  <br />
-  <Navbar bg="primary" variant="dark">
-    <Container>
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="me-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    </Container>
-  </Navbar>
-
-  <br />
-  <Navbar bg="light" variant="light">
-    <Container>
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="me-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
-    </Container>
-  </Navbar>
-</>
-    )
+import CartIcon from "../CartIcon/CartIcon"
+export default function Navbar(){
+  const headerStyles = {
+    display: "flex",
+    felxwrap: "wrap",
+    justifyContent: "space-between",
+    listStyle: "none",
+    backgroundColor: "red",
   }
+
+  return(
+    <header className="header">
+      <div className="Logo">Logo</div>
+        <ul className="links" style={headerStyles}>
+            <li>
+              Productos
+            </li>
+            <li>
+              Inicio
+            </li>
+            <li>
+              Perfil
+            </li>
+            <li>
+              contactarme
+            </li>
+        </ul>
+        <CartIcon count={4}/>
+    </header>
+    
+  )
+}
+
+
+
