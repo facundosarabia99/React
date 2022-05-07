@@ -25,6 +25,7 @@ export default function Navbar(){
               contactarme
             </li>
         </ul>
+        
         <CartIcon count={4}/>
     </header>
     
