@@ -1,9 +1,7 @@
 import {Card, Button} from 'react-bootstrap';
-
-export default function Item ({product}){
-  return(
+export default function Item (product){
     <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src={product.image} style={{maxWidth: "100%"}} />
+  <Card.Img variant="top" src="holder.js/100px180" />
   <Card.Body>
     <Card.Title>{product.title}</Card.Title>
     <Card.Text>
@@ -14,6 +12,4 @@ export default function Item ({product}){
     <Button variant="primary">Go somewhere</Button>
   </Card.Body>
 </Card>
-  )
-    
 }

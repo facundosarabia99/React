@@ -22,7 +22,7 @@ export default function ItemListContainer ({title}) {
   );
 }
 
-function App() {
+function APP() {
   const task = new Promise ((resolve, reject) => {
     setTimeout(() => {
       resolve(products);
