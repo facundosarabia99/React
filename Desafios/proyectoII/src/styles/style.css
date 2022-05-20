@@ -1,0 +1,29 @@
+
+
+.App{
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+}
+
+.App-header{
+    display: flex;
+    background-color: #ECECEC;
+    height: 10vh;
+    width: 80%;
+    margin: 2% 0 0 10%;
+
+}
+
+.nav{
+    width: 100%;
+}
+
+
+h1{
+    color:black;
+    margin: auto;   
+
+}
+

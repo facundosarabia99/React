@@ -1,6 +1,6 @@
 import Alert from 'react-bootstrap/Alert'
-import ItemCount from '../ItemCount/ItemCount'
 import { toast } from "react-toastify";
+import ItemCount from '../ItemCount/ItemCount'
 import {products} from "../../data/products"
 import ItemList from '../ItemList/ItemList';
 import React, { useEffect } from "react"

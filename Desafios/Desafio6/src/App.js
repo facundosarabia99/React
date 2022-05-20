@@ -9,7 +9,7 @@ function App() {
     <>
       <Navbar/> 
       <ItemDetailtContainer />
-      <ItemListContainer greeting={'Bienvenido a la tienda z commerce'} />   
+      <ItemListContainer greeting={'Hola mundo'} />   
     </>
   );
 }
