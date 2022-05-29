@@ -6,7 +6,7 @@ import ItemList from '../ItemList/ItemList';
 import React, { useEffect } from "react"
 
 export default function ItemListContainer({greeting}){
-
+debugger;
     const[productsItems, getProducts] = React.useState([])
 
     useEffect( () => {

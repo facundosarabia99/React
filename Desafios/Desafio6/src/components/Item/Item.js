@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {Card,Button,Row,Col} from 'react-bootstrap'
+import { NavLink } from 'react-router-dom';
+
 export default function Item({item,  onAdd}){
     const [count, setCount] = useState(1);
     const addCount = () => {
@@ -17,7 +19,7 @@ export default function Item({item,  onAdd}){
         <Card  style={{ width: '18rem' }}>
             <Card.Img variant="top" src={item.url} />
             <Card.Body>
-                <Card.Title>{item.title}</Card.Title>
+                <Card.Title><NavLink to={`/item/${item.id}`} >{item.title}</NavLink></Card.Title>
                 <Card.Text>
                     <b>Precio:</b>{item.price}
                     <p>{item.description}</p>                    
