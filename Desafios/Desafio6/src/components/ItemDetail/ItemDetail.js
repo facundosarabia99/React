@@ -95,7 +95,7 @@ export default function ItemDetail({item}){
             {
                 !itemCount ?
                 <ItemCount stock={4} initial={1} onAdd={AgregarItem}/> :
-                <Link to="/cart">Ir al Carrito</Link>
+                <Link to="/Cart/Cart">Ir al Carrito</Link>
             }
         </div>
         </Card>
