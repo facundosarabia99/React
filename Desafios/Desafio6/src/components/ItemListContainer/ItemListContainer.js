@@ -4,10 +4,13 @@ import ItemCount from '../ItemCount/ItemCount'
 import {products} from "../../data/products"
 import ItemList from '../ItemList/ItemList';
 import React, { useEffect } from "react"
+import { useParams } from "react-router-dom";
 
 export default function ItemListContainer({greeting}){
 debugger;
-    const[productsItems, getProducts] = React.useState([])
+
+    const { id } = useParams()
+    const[item, setItem] = React.useState([])
 
     useEffect( () => {
         const getProductsTask = new Promise((resolve,reject) =>{
@@ -18,7 +21,13 @@ debugger;
         getProductsTask.then((result) =>{
             console.log(result);
         })
-    })
+
+    }).then(() => {
+        console.log("getItem")
+        const product = products.find(product => product.id == id);
+        setItem(product);
+    }) 
+
     
 
     const addTocart = (count) =>{
@@ -40,7 +49,12 @@ debugger;
             </Alert>
             {/* <ItemCount stock='5' initial='1' onAdd={addTocart}/> */}
             <ItemList items = {productsItems} onAdd={addTocart}/>
+            <ItemList item = {item} />
+
         </>   
+
+             
+
 
     )
 }

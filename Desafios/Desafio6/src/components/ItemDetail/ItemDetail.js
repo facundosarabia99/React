@@ -1,11 +1,47 @@
-import React, { useState } from 'react';
-import {Card,Button,Row,Col} from 'react-bootstrap'
+import {Card,Button} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { faMinus } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import ItemCount from '../ItemCount/ItemCount'
+import { toast } from "react-toastify";
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import React, { useEffect } from "react"
+import ItemProductCount from '../ItemProductCount/ItemProductCount'
+import { Link } from "react-router-dom";
 
 export default function ItemDetail({item}){
+	const [itemCount, setItemCount] = useState (undefined);
+
+    function AgregarItem (newItemCount) {
+        setItemCount(newItemCount);
+    }
+
+	let navigate = useNavigate();
+	const [quantityToAdd, setQuantityToAdd] = useState(1);
+	const [itemAdded, setItemAdded] = useState(false);
+ 
+
+	const onAdd = (quantityToAdd) => {
+		// Hemos recibido un evento del ItemCount
+        toast.success(`add to cart ${quantityToAdd} items!`, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+		setItemAdded(true)
+	}
+
+	// const goToCart = (event) =>{
+	// 	event.preventDefault();
+	// 	navigate("/cart", { replace: true });
+	// }
+
     return(
         <Card  >
             <div className="container-fliud">
@@ -55,6 +91,14 @@ export default function ItemDetail({item}){
 					</div>
 				</div>
 			</div>
+			<div>
+            {
+                !itemCount ?
+                <ItemCount stock={4} initial={1} onAdd={AgregarItem}/> :
+                <Link to="/cart">Ir al Carrito</Link>
+            }
+        </div>
         </Card>
+
     )
 }

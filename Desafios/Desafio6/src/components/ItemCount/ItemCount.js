@@ -28,9 +28,8 @@ export default function ItemCount({ stock, initial,  onAdd }){
                         <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src="holder.js/100px180" />
                             <Card.Body>
-                                <Card.Title>Camisa Tiger</Card.Title>
+                                <Card.Title></Card.Title>
                                 <Card.Text>
-                                Es una camisa increible con la cual quedaras muy satisfecho.
                                 </Card.Text>
                                 <Row>
                                     <Col><button onClick={decreaseCount}> - </button></Col>
