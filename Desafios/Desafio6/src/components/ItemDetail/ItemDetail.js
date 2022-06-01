@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import React, { useEffect } from "react"
 import ItemProductCount from '../ItemProductCount/ItemProductCount'
+import { CartContext } from "../../Context/CartContext"
 import { Link } from "react-router-dom";
 
 export default function ItemDetail({item}){
@@ -95,7 +96,7 @@ export default function ItemDetail({item}){
             {
                 !itemCount ?
                 <ItemCount stock={4} initial={1} onAdd={AgregarItem}/> :
-                <Link to="/Cart/Cart">Ir al Carrito</Link>
+                <Link to="/Cart">Go to cart</Link>
             }
         </div>
         </Card>
