@@ -27,7 +27,7 @@ export const products = [
       id: 4,
       title: "Macbook M1 Pro 2022 16,2' Retina",
       stock: 1,
-      price: 500000,
+      price: 50000,
       url: "https://m.media-amazon.com/images/I/71an9eiBxpL._AC_SL1500_.jpg",
       category_id: 3,
     },
