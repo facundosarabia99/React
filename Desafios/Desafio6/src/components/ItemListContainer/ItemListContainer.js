@@ -6,7 +6,8 @@ import ItemList from '../ItemList/ItemList';
 import React, { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { doc, getDoc, getFirestore} from "firebase/firestore";
-import { Container, Spinner } from 'react-bootstrap';
+import { Container, Spinner, Row, Col } from 'react-bootstrap';
+import { useState } from "react";
 
 
 export default function ItemListContainer({title, categoryId}){
