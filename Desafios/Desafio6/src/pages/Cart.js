@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext'
 
@@ -7,7 +7,7 @@ const Cart = () => {
 
     return (
     <div>
-        {Cart.length === 0 ? (
+        {cart.length === 0 ? (
              <div>
              <h2>Cart Empty</h2>
              <Link to="/">Home</Link>
@@ -32,5 +32,5 @@ const Cart = () => {
 
     </div>
      );
-    };
+};
     export default Cart;
