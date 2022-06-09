@@ -12,7 +12,7 @@ export default function ItemDetailtContainer(){
     React.useEffect(() => {
         const db = getFirestore()
         // Traer Producto
-        const porductRef = doc(db, "products", productId)
+        const porductRef = doc(db, "products", id)
         getDoc(porductRef).then(snapshot => {
             if(snapshot.exists()){
            setItem({id: snapshot.id, ...snapshot.data()})

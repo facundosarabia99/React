@@ -5,10 +5,10 @@ import {products} from "../../data/products"
 import ItemList from '../ItemList/ItemList';
 import React, { useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { doc, getDoc, getDocs, collection, getFirestore, query, where} from "firebase/firestore";
 import { Container, Spinner, Row, Col } from 'react-bootstrap';
 import { useState } from "react";
-import { getFirestore, getDoc, doc } from "firebase/firestore";
+import { doc, getDoc, getDocs, collection, getFirestore, query, where} from "firebase/firestore";
+
 
 
 export default function ItemListContainer({title, categoryId}){

@@ -2,6 +2,9 @@ import { NavLink } from 'react-router-dom';
 import logoImg from '../../assets/logo.png';
 import Carticon from '../CartIcon/CartIcon';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+
 import React, { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
 
@@ -14,7 +17,7 @@ export default function Navbar(){
                 <NavLink to="/"> <img alt="logo" src={logoImg}/></NavLink>
             </div>
             {/* <ul className="links" style = {linkstyle}> */}
-            <ul className="links" >
+            <ul>
                 <li><NavLink to={`/`} > Inicio </NavLink></li>
                 <li><NavLink to={`/category/vehiculos`} > Vehiculos </NavLink></li>
                 <li><NavLink to={`/category/electricos`} > Electricos </NavLink></li>

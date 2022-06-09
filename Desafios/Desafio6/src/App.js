@@ -7,6 +7,26 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 function App() {
+
+  const order = {
+    buyer: {
+      name: "",
+      email: "",
+      phone: "",
+      address: "",
+    },
+    items: [
+      {
+        id: 1,
+        title: "Producto Demo 1",
+        price: 100,
+        quntity: 5,
+      }
+    ],
+    total: 500
+  }
+
+  
   return (
     <>
     <BrowserRouter>
