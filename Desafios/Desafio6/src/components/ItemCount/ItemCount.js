@@ -1,53 +1,34 @@
 import React, { useState } from 'react';
-import Card from 'react-bootstrap/Card'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Button from 'react-bootstrap/Button'
 
-export default function ItemCount({ stock, initial,  onAdd }){
-    const [count, setCount] = useState(+initial);
-    const addCount = () => {
+
+function ItemCount({ stock, initial,  onAdd }){
+    const [count, setCount] = useState(initial);
+    function addCount () {
         if (count < stock) {
-        setCount(count + 1);
-        }
-    };
-
-    const decreaseCount = () => {
+        setCount(count + 1)}
+        else{
+        setCount(count + 0)}
+    }
+        
+    function decreaseCount () {
         if (count > 1) {
-            setCount(count - 1);
-            }
+            setCount(count - 1)}
+            else{
+                setCount(count - 0)};
     }
 
-    
-    return(
-        <div>                    
-            <Container>
-                <Row>
-                    <Col md={{ span: 4, offset: 4 }}>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="holder.js/100px180" />
-                            <Card.Body>
-                                <Card.Title></Card.Title>
-                                <Card.Text>
-                                </Card.Text>
-                                <Row>
-                                    <Col><button onClick={decreaseCount}> - </button></Col>
-                                    <Col>{count}</Col>
-                                    <Col><button onClick={addCount}> + </button></Col>
-                                </Row>                                
-                                <Row>
-                                    <Button variant="primary" onClick={ ()=>onAdd(count)}>Agregar al carrito </Button>{' '}
-                                </Row>                                
-                            </Card.Body>
-                        </Card>
-                    
-                    </Col>
-                </Row>
-        
-                </Container>
-        </div>
-        
 
-    )
+
+
+
+
+    
+    return <div>
+            <button onClick={addCount}> + </button>
+            <h2>{count}</h2>
+            <button onClick={decreaseCount}> - </button>
+            <button onClick={ ()=>onAdd(count)}>Add to cart </button>                                                   
+        </div>;   
 }
+
+export default ItemCount;

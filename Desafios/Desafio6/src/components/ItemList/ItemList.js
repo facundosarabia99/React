@@ -1,20 +1,16 @@
+import { useEffect } from "react"
 import Item from "../Item/Item"
-import {Row,Container,Col} from 'react-bootstrap'
 
-export default function ItemList({items,  onAdd}){
+export default function ItemList({products}){
     return(        
         <div>
-            <Container>
-                <Row>
-                    {items.map((product) => {
-                        return(
-                            <Col key={product.id} md={{ span: 4 }}>
-                                <Item key={product.id} item = {product} onAdd={onAdd}/>                
-                            </Col>
+            {products.map(function(product) {
+                return(
+                    <Item key={product.id} item = {product} />                
+    
                         )                
-                    })}
-                </Row>
-            </Container>
+                    })
+                    }
         </div>
     )
 }

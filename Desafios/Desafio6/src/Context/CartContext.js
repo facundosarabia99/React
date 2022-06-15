@@ -6,36 +6,36 @@ export const CartContext = createContext ([]);
 
 const CartContextProvider = ({children}) => {
     const [cart, setCart] = useState ([]);
-    const addToCart = (cantidad, producto) => {
-        if (enCart(producto.id)) {
-            alert('Ya esta en el cart!');
+    const addToCart = (quantity, product) => {
+        if (enCart(product.id)) {
+            alert('Already in cart!');
         } else {
-        setCart ([ ...cart, {...producto, cantidad}])
+        setCart ([ ...cart, {...product, quantity}])
         }
     };
     const enCart = (id) => {
-        const respuesta = cart.some((producto)=> producto.id === id);
+        const respuesta = cart.some((product)=> product.id === id);
         return respuesta;
     };
     const removeProduct = (id) =>{
-        setCart(cart.filter(producto => producto.id != id))
+        setCart(cart.filter(product => product.id != id))
     }
     const deleteCart = () => {
         setCart([]);
     };
     
     const getTotalCart = () =>{
-        let cantidadCart = 0;
+        let quantityCart = 0;
         for(let i = 0; i < cart.length; i++){
-            cantidadCart += cart[i].cantidad
+            quantityCart += cart[i].quantity
         };
-        return cantidadCart;
+        return quantityCart;
     }
     
     const getPrecioTotalCart = () =>{
         let precioTotal = 0;
         for(let i = 0; i < cart.length; i++){
-            precioTotal += (cart[i].precio * cart[i].cantidad)
+            precioTotal += (cart[i].precio * cart[i].quantity)
         }
         return precioTotal;
     }

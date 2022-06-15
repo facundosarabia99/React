@@ -28,12 +28,14 @@ export const Formulario = ({finalizarCompra}) => {
     };
 
 
-
+ 
 
 
     return (
         <div className='finalizarCompra'>
             <h2> Finalizar Compra </h2>
+            <h3> Datos Personales </h3>
+
             <form className='formStyle' onSubmit={handlerSubmit} onChange={({target})=>{handlerChangeInputs(target)}}>
                 <div>
                     <label className='labelForm'>Nombre:

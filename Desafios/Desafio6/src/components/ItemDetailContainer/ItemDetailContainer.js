@@ -1,24 +1,29 @@
 // import {products} from "../../data/products"
-import ItemDetail from "../ItemDetail/ItemDetail"
-import React from "react"
+import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom"
-import { getFirestore, doc, getDoc } from "firebase/firestore"
+import {getProducts} from '../../api/api';
+import ItemDetail from "../ItemDetail/ItemDetail"
+import { doc, getDoc } from "firebase/firestore"
+import { db } from "../../firebase"
 
 export default function ItemDetailtContainer(){
-
-    const { id } = useParams()
+    const [product, setProduct] = useState([]);
+    const { itemId } = useParams()
     
-    const[item, setItem] = React.useState([])
-    React.useEffect(() => {
-        const db = getFirestore()
+    useEffect(() => {
+            // const db = getFirestore()
         // Traer Producto
-        const porductRef = doc(db, "products", id)
-        getDoc(porductRef).then(snapshot => {
+        const itemRef = doc(db, "products", itemId)
+        getDoc(itemRef)
+        .then(snapshot => {
             if(snapshot.exists()){
-           setItem({id: snapshot.id, ...snapshot.data()})
+           setProduct({id: snapshot.id, ...snapshot.data()})
             }
         })
-    }, [])
+        .catch(error => {
+            console.log(error)
+        })
+    }, [itemId]);
     
     // const getItem = new Promise((resolve,reject) =>{
     //     setTimeout(() =>{
@@ -33,9 +38,9 @@ export default function ItemDetailtContainer(){
 
     return (
         <>           
-            <ItemDetail item = {item} />
+            {!product? <p>Loading products</p> : <ItemDetail product = {product} />}
         </>   
 
     )
 
-}
+};
