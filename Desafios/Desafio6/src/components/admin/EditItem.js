@@ -84,7 +84,7 @@ export const EditItem = () => {
     return (
         <div>
             <h1>Edit Product</h1>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleEditItem}>
             <div>
                 <label>ID</label>
                 <input type="number" name="id" value={formValues.id} onChange={handleInputChange} />

@@ -15,7 +15,7 @@ export const AddItem = () => {
 
     const [formValues, setFormValues] = useState(initialState);
     const [formImagen, setFormImagen] = useState();
-    const allInputs = [fromValues.id, formValues.title, formValues.stock, formValues.price, formValues.url, formValues.category_id];
+    const allInputs = [formValues.id, formValues.title, formValues.stock, formValues.price, formValues.url, formValues.category_id];
 
     const handleInputChange = (event) => {
         setFormValues({
@@ -28,7 +28,7 @@ export const AddItem = () => {
         setFormImagen(event.target.files[0]);
     }
 
-    const onSubmit = (event) => {
+    const onSubmit = async (event) => {
         event.preventDefault();
         if (!allInputs.some(input => input === "")) {
             const itemCollection = collection(db, "items");

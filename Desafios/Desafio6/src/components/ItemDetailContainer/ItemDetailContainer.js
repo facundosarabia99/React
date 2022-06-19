@@ -6,7 +6,7 @@ import ItemDetail from "../ItemDetail/ItemDetail"
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../../firebase"
 
-export default function ItemDetailtContainer(){
+export default function ItemDetailContainer(){
     const [product, setProduct] = useState([]);
     const { itemId } = useParams()
     
