@@ -10,3 +10,4 @@ UseState para guardar estados.
 UseEffect para llevar a cabo funciones teniendo en cuenta el cambio de un componente.
 UseContext para crear un contexto que tenga funciones, estados y datos que necesite usar en sus componentes hijos, facilitando el paso de Informacion
 UseParams para hacer dinámica la URL.
+
