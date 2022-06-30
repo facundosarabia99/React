@@ -14,7 +14,7 @@ const Cart = () => {
              </div>
         ) : (
              <div>
-                {Cart.map((item) => (
+                {cart.map((item) => (
                     <div key={item.id}>
                     <h3>{item.title}</h3>
                     <p>Precio: ${item.price}</p>

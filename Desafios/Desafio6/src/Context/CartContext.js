@@ -33,7 +33,7 @@ const CartContextProvider = ({children}) => {
     const getPrecioTotalCart = () =>{
         let precioTotal = 0;
         for(let i = 0; i < cart.length; i++){
-            precioTotal += (cart[i].precio * cart[i].quantity)
+            precioTotal += (cart[i].price * cart[i].quantity)
         }
         return precioTotal;
     }

@@ -8,14 +8,16 @@ import { db } from "../../firebase"
 
 export default function ItemDetailContainer(){
     const [product, setProduct] = useState([]);
-    const { itemId } = useParams()
+    const { id } = useParams()
     
     useEffect(() => {
             // const db = getFirestore()
         // Traer Producto
-        const itemRef = doc(db, "products", itemId)
+        console.log(id)
+        const itemRef = doc(db, "productos",id)
         getDoc(itemRef)
         .then(snapshot => {
+            console.log(snapshot.data())
             if(snapshot.exists()){
            setProduct({id: snapshot.id, ...snapshot.data()})
             }
@@ -23,7 +25,7 @@ export default function ItemDetailContainer(){
         .catch(error => {
             console.log(error)
         })
-    }, [itemId]);
+    }, [id]);
     
     // const getItem = new Promise((resolve,reject) =>{
     //     setTimeout(() =>{

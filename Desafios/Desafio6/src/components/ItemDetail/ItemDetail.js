@@ -10,10 +10,11 @@ export default function Item({product}){
 			
 	const onAdd = (quantityToAdd) => {
 		// Hemos recibido un evento del ItemCount
-		setItemCount(quantityToAdd);
+		setItemCount(x =>quantityToAdd);
 		addToCart(quantityToAdd, product)
 	}
 
+	console.log({product})
     return(
         <div>
 			<div>
@@ -27,7 +28,7 @@ export default function Item({product}){
 				{
 					!itemCount ?
 					<ItemCount stock={product.stock} initial={1} onAdd={onAdd}/> :
-					<Link to="/cart">Finish Purchase</Link>
+					<Link to="/formcompra">Finish Purchase</Link>
 				}
 			</div>
 		</div>

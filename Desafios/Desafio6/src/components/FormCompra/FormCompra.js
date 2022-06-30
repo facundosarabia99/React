@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Alert } from '@mui/material';
 
 
-export const Formulario = ({finalizarCompra}) => {
+const FormCompra = ({}) => {
     const [user, setUser] = useState({
         name: "",
         email: "",
@@ -13,7 +13,7 @@ export const Formulario = ({finalizarCompra}) => {
 
     const handlerSubmit = (event) => {
         event.preventDefault();
-        finalizarCompra()
+        
     }
 
     const handlerChangeInputs = (target) => {
@@ -26,10 +26,6 @@ export const Formulario = ({finalizarCompra}) => {
         const mje = <Alert severity="success">This is a success alert — check it out!</Alert>
         return mje
     };
-
-
- 
-
 
     return (
         <div className='finalizarCompra'>
@@ -59,3 +55,5 @@ export const Formulario = ({finalizarCompra}) => {
         </div>
     )
 };
+
+export default FormCompra
